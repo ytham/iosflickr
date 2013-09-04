@@ -25,8 +25,9 @@
 		A643D52C17D3CFA300B52BC8 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A643D52B17D3CFA300B52BC8 /* FlickrFetcher.m */; };
 		A643D52F17D43CC800B52BC8 /* PlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A643D52E17D43CC800B52BC8 /* PlacesViewController.m */; };
 		A643D53217D43CE500B52BC8 /* RecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A643D53117D43CE500B52BC8 /* RecentViewController.m */; };
-		A643D53517D63B5500B52BC8 /* PlacesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A643D53417D63B5500B52BC8 /* PlacesDetailViewController.m */; };
 		A643D53817D63F2300B52BC8 /* PlacesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A643D53717D63F2300B52BC8 /* PlacesCollectionViewController.m */; };
+		A643D53E17D6AAC600B52BC8 /* LargeImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A643D53D17D6AAC600B52BC8 /* LargeImageViewController.m */; };
+		A643D54117D6AEE900B52BC8 /* LargeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A643D54017D6AEE900B52BC8 /* LargeImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,10 +67,12 @@
 		A643D52E17D43CC800B52BC8 /* PlacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesViewController.m; sourceTree = "<group>"; };
 		A643D53017D43CE500B52BC8 /* RecentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentViewController.h; sourceTree = "<group>"; };
 		A643D53117D43CE500B52BC8 /* RecentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentViewController.m; sourceTree = "<group>"; };
-		A643D53317D63B5500B52BC8 /* PlacesDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesDetailViewController.h; sourceTree = "<group>"; };
-		A643D53417D63B5500B52BC8 /* PlacesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesDetailViewController.m; sourceTree = "<group>"; };
 		A643D53617D63F2300B52BC8 /* PlacesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesCollectionViewController.h; sourceTree = "<group>"; };
 		A643D53717D63F2300B52BC8 /* PlacesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesCollectionViewController.m; sourceTree = "<group>"; };
+		A643D53C17D6AAC600B52BC8 /* LargeImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargeImageViewController.h; sourceTree = "<group>"; };
+		A643D53D17D6AAC600B52BC8 /* LargeImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargeImageViewController.m; sourceTree = "<group>"; };
+		A643D53F17D6AEE900B52BC8 /* LargeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargeImageView.h; sourceTree = "<group>"; };
+		A643D54017D6AEE900B52BC8 /* LargeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargeImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,12 +138,14 @@
 				A643D4FB17D2FAE400B52BC8 /* TFPAppDelegate.h */,
 				A643D4FC17D2FAE400B52BC8 /* TFPAppDelegate.m */,
 				A643D4FE17D2FAE400B52BC8 /* Main_iPhone.storyboard */,
+				A643D53F17D6AEE900B52BC8 /* LargeImageView.h */,
+				A643D54017D6AEE900B52BC8 /* LargeImageView.m */,
+				A643D53C17D6AAC600B52BC8 /* LargeImageViewController.h */,
+				A643D53D17D6AAC600B52BC8 /* LargeImageViewController.m */,
 				A643D53617D63F2300B52BC8 /* PlacesCollectionViewController.h */,
 				A643D53717D63F2300B52BC8 /* PlacesCollectionViewController.m */,
 				A643D52D17D43CC800B52BC8 /* PlacesViewController.h */,
 				A643D52E17D43CC800B52BC8 /* PlacesViewController.m */,
-				A643D53317D63B5500B52BC8 /* PlacesDetailViewController.h */,
-				A643D53417D63B5500B52BC8 /* PlacesDetailViewController.m */,
 				A643D53017D43CE500B52BC8 /* RecentViewController.h */,
 				A643D53117D43CE500B52BC8 /* RecentViewController.m */,
 				A643D50117D2FAE400B52BC8 /* Main_iPad.storyboard */,
@@ -282,11 +287,12 @@
 			files = (
 				A643D52F17D43CC800B52BC8 /* PlacesViewController.m in Sources */,
 				A643D4F917D2FAE400B52BC8 /* main.m in Sources */,
+				A643D54117D6AEE900B52BC8 /* LargeImageView.m in Sources */,
+				A643D53E17D6AAC600B52BC8 /* LargeImageViewController.m in Sources */,
 				A643D4FD17D2FAE400B52BC8 /* TFPAppDelegate.m in Sources */,
 				A643D53217D43CE500B52BC8 /* RecentViewController.m in Sources */,
 				A643D52C17D3CFA300B52BC8 /* FlickrFetcher.m in Sources */,
 				A643D53817D63F2300B52BC8 /* PlacesCollectionViewController.m in Sources */,
-				A643D53517D63B5500B52BC8 /* PlacesDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

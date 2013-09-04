@@ -8,8 +8,11 @@
 
 #import "PlacesCollectionViewController.h"
 #import "FlickrFetcher.h"
+#import "LargeImageViewController.h"
 
-@interface PlacesCollectionViewController ()
+@interface PlacesCollectionViewController () {
+    int selectedPhotoIndex;
+}
 
 @end
 
@@ -42,7 +45,7 @@
 }
 
 - (void)setupArray {
-    self.photos = [FlickrFetcher photosInPlace:self.place maxResults:50];
+    self.photos = [FlickrFetcher photosInPlace:self.place maxResults:64];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -61,6 +64,20 @@
     flickrPhotoView.image = theImage;
     
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    //LargeImageViewController *livc = [self.storyboard instantiateViewControllerWithIdentifier:@"Image"];
+    //[self.navigationController pushViewController:livc animated:YES];
+    //livc.image = [NSData dataWithContentsOfURL:[FlickrFetcher urlForPhoto:[self.photos objectAtIndex:indexPath.row] format:FlickrPhotoFormatOriginal]];
+    selectedPhotoIndex = indexPath.row;
+    //[self performSegueWithIdentifier:@"ShowLargeImage" sender:indexPath];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    LargeImageViewController *livc = [segue destinationViewController];
+
+    livc.photo = [self.photos objectAtIndex:selectedPhotoIndex];
 }
 
 @end

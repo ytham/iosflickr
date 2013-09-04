@@ -1,5 +1,5 @@
 //
-//  PlacesDetailViewController.h
+//  LargeImageViewController.h
 //  Top Flickr Places
 //
 //  Created by Yu Jiang Tham on 9/3/13.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlacesDetailViewController : UIViewController
+@interface LargeImageViewController : UIViewController
 
-@property (nonatomic, strong) NSDictionary *details;
+@property (nonatomic, strong) NSDictionary *photo;
 
 @end
