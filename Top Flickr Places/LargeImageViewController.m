@@ -44,6 +44,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.title = [self.photo valueForKey:@"title"];
 }
 
