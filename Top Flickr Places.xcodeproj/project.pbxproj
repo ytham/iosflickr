@@ -28,6 +28,7 @@
 		A643D53817D63F2300B52BC8 /* PlacesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A643D53717D63F2300B52BC8 /* PlacesCollectionViewController.m */; };
 		A643D53E17D6AAC600B52BC8 /* LargeImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A643D53D17D6AAC600B52BC8 /* LargeImageViewController.m */; };
 		A643D54117D6AEE900B52BC8 /* LargeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A643D54017D6AEE900B52BC8 /* LargeImageView.m */; };
+		A643D54317D9A13E00B52BC8 /* userdefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = A643D54217D9A13E00B52BC8 /* userdefaults.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		A643D53D17D6AAC600B52BC8 /* LargeImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargeImageViewController.m; sourceTree = "<group>"; };
 		A643D53F17D6AEE900B52BC8 /* LargeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargeImageView.h; sourceTree = "<group>"; };
 		A643D54017D6AEE900B52BC8 /* LargeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargeImageView.m; sourceTree = "<group>"; };
+		A643D54217D9A13E00B52BC8 /* userdefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userdefaults.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				A643D4F817D2FAE400B52BC8 /* main.m */,
 				A643D4FA17D2FAE400B52BC8 /* Top Flickr Places-Prefix.pch */,
 				A643D52717D2FC3600B52BC8 /* FlickrAPIData.plist */,
+				A643D54217D9A13E00B52BC8 /* userdefaults.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A643D50317D2FAE400B52BC8 /* Main_iPad.storyboard in Resources */,
+				A643D54317D9A13E00B52BC8 /* userdefaults.plist in Resources */,
 				A643D50B17D2FAE400B52BC8 /* Images.xcassets in Resources */,
 				A643D52817D2FC3600B52BC8 /* FlickrAPIData.plist in Resources */,
 				A643D50017D2FAE400B52BC8 /* Main_iPhone.storyboard in Resources */,

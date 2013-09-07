@@ -32,8 +32,14 @@
 
 - (void)setLargeImageView:(LargeImageView *)largeImageView {
     _largeImageView = largeImageView;
-    // Add gesture recognizers
-    //self.largeImageView.dataSource = self;
+    
+    UIGestureRecognizer *pangr = [[UIPanGestureRecognizer alloc] initWithTarget:largeImageView action:@selector(pan:)];
+    UIGestureRecognizer *pinchgr = [[UIPinchGestureRecognizer alloc] initWithTarget:largeImageView action:@selector(pinch:)];
+    
+    [self.largeImageView addGestureRecognizer:pangr];
+    [self.largeImageView addGestureRecognizer:pinchgr];
+    
+    self.largeImageView.dataSource = self;
 }
 
 - (UIImage *)imageForLargeImageView:(LargeImageView *)sender {
@@ -52,6 +58,17 @@
     NSData *img = [NSData dataWithContentsOfURL:[FlickrFetcher urlForPhoto:self.photo format:FlickrPhotoFormatOriginal]];
     self.largeImageView.image = [UIImage imageWithData:img];
 }
+
+/*- (IBAction)pan:(UIPanGestureRecognizer *)recognizer {
+    CGPoint translation = [recognizer translationInView:self.largeImageView];
+    recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,
+                                         recognizer.view.center.y + translation.y);
+    [recognizer setTranslation:CGPointMake(0, 0) inView:self.largeImageView];
+}
+
+- (IBAction)pinch:(UIPinchGestureRecognizer *)recognizer {
+    
+}*/
 
 - (void)didReceiveMemoryWarning
 {

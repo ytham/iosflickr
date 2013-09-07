@@ -36,25 +36,6 @@
             </objects>
             <point key="canvasLocation" x="1187" y="-187"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="UZy-FM-fWD">
-            <objects>
-                <viewController id="0ec-8T-FBy" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="KNC-hw-0tU"/>
-                        <viewControllerLayoutGuide type="bottom" id="dhU-pP-Tit"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xK2-h9-UH6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="2gj-pe-52i"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yGg-Pa-I11" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1676" y="-901"/>
-        </scene>
         <!--Places Collection View Controller-->
         <scene sceneID="I0o-lB-ELC">
             <objects>
@@ -85,9 +66,6 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <size key="customSize" width="77" height="77"/>
-                                <connections>
-                                    <segue destination="XNf-WZ-Mxb" kind="push" identifier="ShowLargeImage" id="VH4-xG-574"/>
-                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -105,9 +83,14 @@
         <scene sceneID="Gtn-FA-eRi">
             <objects>
                 <viewController storyboardIdentifier="Image" id="XNf-WZ-Mxb" customClass="LargeImageViewController" sceneMemberID="viewController">
-                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="KGE-fC-UIx" customClass="LargeImageView">
+                    <imageView key="view" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="KGE-fC-UIx" customClass="LargeImageView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="OML-Ax-o7S" appends="YES" id="ie4-Oi-iMz"/>
+                            <outletCollection property="gestureRecognizers" destination="x5u-oY-6DQ" appends="YES" id="WeN-B7-bY1"/>
+                        </connections>
                     </imageView>
                     <navigationItem key="navigationItem" id="vYh-yh-Rkr"/>
                     <connections>
@@ -115,6 +98,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAI-g9-jz6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="OML-Ax-o7S">
+                    <connections>
+                        <action selector="pinch:" destination="XNf-WZ-Mxb" id="8jm-V1-v6a"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="x5u-oY-6DQ">
+                    <connections>
+                        <action selector="pan:" destination="XNf-WZ-Mxb" id="MWK-FZ-G8W"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2169" y="-187"/>
         </scene>
@@ -127,11 +120,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Xoq-pS-wKK">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Xoq-pS-wKK">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xoq-pS-wKK" id="nOO-KK-MUq">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -142,6 +135,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Recent" id="UbL-pB-mcf"/>
+                    <connections>
+                        <outlet property="tableView" destination="YsC-q4-WaL" id="w8T-9g-9ee"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HAE-SY-fdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

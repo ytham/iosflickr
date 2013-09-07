@@ -70,14 +70,36 @@
     //LargeImageViewController *livc = [self.storyboard instantiateViewControllerWithIdentifier:@"Image"];
     //[self.navigationController pushViewController:livc animated:YES];
     //livc.image = [NSData dataWithContentsOfURL:[FlickrFetcher urlForPhoto:[self.photos objectAtIndex:indexPath.row] format:FlickrPhotoFormatOriginal]];
-    selectedPhotoIndex = indexPath.row;
-    //[self performSegueWithIdentifier:@"ShowLargeImage" sender:indexPath];
+    //selectedPhotoIndex = indexPath.row;
+    [self performSegueWithIdentifier:@"ShowLargeImage" sender:indexPath];
 }
 
+/*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     LargeImageViewController *livc = [segue destinationViewController];
 
     livc.photo = [self.photos objectAtIndex:selectedPhotoIndex];
+}
+*/
+- (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    NSIndexPath *index = sender;
+    
+    LargeImageViewController *livc = [self.storyboard  instantiateViewControllerWithIdentifier:@"Image"];
+    [self.navigationController pushViewController:livc animated:YES];
+    
+    livc.photo = [self.photos objectAtIndex:index.row];
+    
+    // Record photo to defaults list
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSMutableArray *defaultsArray = [[NSMutableArray alloc] initWithArray:[defaults arrayForKey:@"recents"]];
+    [defaultsArray addObject:livc.photo];
+    
+    //NSDictionary *defaultsDictionary = [defaults dictionaryRepresentation];
+    //NSString *keyValue = [NSString stringWithFormat:@"%d", numValues];
+    
+    [defaults setValue:defaultsArray forKey:@"recents"];
+    [defaults synchronize];
 }
 
 @end

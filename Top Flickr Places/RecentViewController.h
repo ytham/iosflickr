@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RecentViewController : UITableViewController
+@interface RecentViewController : UITableViewController {
+    int size;
+    NSUserDefaults *defaults;
+    NSArray *defaultsArray;
+}
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

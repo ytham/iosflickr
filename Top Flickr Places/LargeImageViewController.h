@@ -12,4 +12,7 @@
 
 @property (nonatomic, strong) NSDictionary *photo;
 
+//- (IBAction)pan:(UIPanGestureRecognizer *)recognizer;
+//- (IBAction)pinch:(UIPinchGestureRecognizer *)recognizer;
+
 @end

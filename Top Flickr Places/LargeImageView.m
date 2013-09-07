@@ -21,6 +21,24 @@
     return self;
 }
 
+- (void)pan:(UIPanGestureRecognizer *)recognizer {
+    if ((recognizer.state == UIGestureRecognizerStateChanged) ||
+        (recognizer.state == UIGestureRecognizerStateEnded)) {
+        CGPoint translation = [recognizer translationInView:self];
+        self.center = CGPointMake(self.center.x + translation.x, self.center.y + translation.y);
+        [recognizer setTranslation:CGPointZero inView:self];
+    }
+}
+
+- (void)pinch:(UIPinchGestureRecognizer *)recognizer {
+    if ((recognizer.state == UIGestureRecognizerStateChanged) ||
+        (recognizer.state == UIGestureRecognizerStateEnded)) {
+        CGFloat scale = [recognizer scale];
+        self.transform = CGAffineTransformScale(self.transform, scale, scale);
+        [recognizer setScale:1];
+    }
+}
+
 
 // Need to implement pan and pinch gestures
 
